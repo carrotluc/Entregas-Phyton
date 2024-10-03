@@ -24,3 +24,18 @@ def numero_combinatorio(n:int, k:int) -> int:
         nm: int = factorial(n)/(factorial(k)*factorial(n-k)) 
     return nm
 
+#ACTIVIDAD 4 - ENTREGA 1:
+from math import factorial
+def producto_s(n:int, k:int) -> int:
+     if n < k:
+        return "ERROR: ¡n debe ser mayor que k!"
+    s:int = 1  
+    for i in range(1, factorial(k)):  
+        s *= (-1)*i*() _???
+    return s
+    
+    
+    
+    
+    
+    
