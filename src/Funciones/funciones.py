@@ -1,14 +1,26 @@
 #ACTIVIDAD 1 - ENTREGA 1:
-def calcular_producto(n, k) -> int:
-    #Verificar que n > k:
+def calcular_producto(n:int, k:int) -> int:
     if n <= k:
-        return "ERROR: n debe ser mayor que k"
-    s = 1  #Puesto que i=0, el for se inicia en 1. 
+        return "ERROR: ¡n debe ser mayor que k!"
+    s:int = 1  
     for i in range(k + 1):  
         s *= (n - i + 1) 
     return s
-#EJEMPLO 1:
-n=11
-k=1
-r = calcular_producto(n,k)
-print(f'Para el caso de n={n} y k={k}, la solución del enunciado será {r}.')
+
+#ACTIVIDAD 2 - ENTREGA 1:
+def producto_secuencia_geo(a: int, r: int, k:int) -> int:
+    s:int = 1
+    for i in range(1, k+1): 
+        ai= a* (r** (i-1))
+        s *= ai
+    return s
+
+#ACTIVIDAD 3 - ENTREGA 1: 
+from math import factorial
+def numero_combinatorio(n:int, k:int) -> int:
+    if n < k:
+        return "ERROR: ¡n debe ser mayor que k!"
+    else: 
+        nm: int = factorial(n)/(factorial(k)*factorial(n-k)) 
+    return nm
+
