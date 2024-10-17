@@ -48,13 +48,46 @@ def test3():
     print(f'La solución al problema es {sol}')
 ###########################################################################################
 #EJEMPLO 4:
+from math import factorial
+def producto_s(n:int, k:int) -> float:
+    if n < k:
+        return "ERROR: ¡n debe ser mayor que k!"
+    else: 
+        s= 0
+        a: float = 1/factorial(k)
+        for i in range(0,k): #Es hasta k ya que en los rangos el últ no está incluido
+            c: float = (-1)**i
+            b: float = numero_combinatorio(k+1,i+1)
+            d: float = (k-i)**n
+            s:int = s + (a*c*b*d)
+        return s
+
+def test4():
+    print(producto_s(4,2))
     
-    
+###########################################################################################
+#EJEMPLO 5:
+from typing import Callable
+def m_newton(f: Callable[[float],[float]], g: Callable[[float],[float]], a:float, e:float)-> float:
+    x = a
+    while abs(f(x)) > e:
+        x = x - f(x) / g(x)
+    return x
+
+#Se modifica lo que hay escrito después de la x: en función de la funcion con la que queramos trabajar. 
+f:Callable[[float],[float]] = lambda x: 2.0*(x**2.0)
+g: Callable[[float], float] = lambda x: 4*x
+
+def test5():
+    a = 3.0
+    e = 0.001
+    root = m_newton(f, g, a, e)
+    print(f"La raíz es aproximadamente: {root}")
 #########################################################################
 if __name__ == '__main__':
     print(test1())
     print(test2())
-    print(test3())
+    print(test4())
 
 
 

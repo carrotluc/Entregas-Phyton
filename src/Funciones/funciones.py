@@ -43,8 +43,22 @@ def producto_s(n:int, k:int) -> float:
 from typing import Callable
 #f es la función
 #g es la función derivada
-def m_newton(f: Callable[[int],int], g: Callable[[int],int], a:float, e:float)-> float:
-    if f´(x
+def m_newton(f: Callable[[float],[float]], g: Callable[[float],[float]], a:float, e:float)-> float:
+    x = a
+    while abs(f(x)) > e:
+        x = x - f(x) / g(x)
+    return x
+
+#Se modifica lo que hay escrito después de la x: en función de la funcion con la que queramos trabajar. 
+f:Callable[[float],[float]] = lambda x: 2.0*(x**2.0)
+g: Callable[[float], float] = lambda x: 4*x
+
+
+
+
+ 
+    
+
     
     
     
