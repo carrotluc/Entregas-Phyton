@@ -1,7 +1,8 @@
+#CAMBIAR EN FUNCIÓN DEL FICHERO CON EL QUE SE QUIERA TRABAJAR
+proyecto = '../../' 
+filepath = proyecto + "resources/lin_quijote.txt"
 ################################################################################
 #EJEMPLO 6:
-proyecto = '../../' 
-filepath = proyecto + "resources/archivo_palabras.txt"
 
 def contador_palabras(filepath, sep, p, encoding='utf-8'):
     p = p.lower()  
@@ -14,7 +15,7 @@ def contador_palabras(filepath, sep, p, encoding='utf-8'):
     return n_palabra 
 
 def test1():
-    resultado = contador_palabras(filepath, ' ', 'gonzalo')
+    resultado = contador_palabras(filepath, ' ', 'quijote')
     print(f'La palabra "proyecto" aparece {resultado} veces.')
 ################################################################################
 #EJEMPLO 7:
@@ -28,9 +29,9 @@ def cont_lineas(filepath: str, cad: str) ->int:
     return ls
 
 def test2():
-    cadena = 'codigo'  
+    cadena = 'quijote'  
     resultado = cont_lineas(filepath, cadena)
-    print(resultado)
+    print(f'La palabra {cadena} aparece en las líneas {resultado}')
 ################################################################################
 #EJEMPLO 8:
 def p_unicas(filepath, sep=' '):
@@ -56,4 +57,4 @@ def test3():
 
 ################################################################################
 if __name__ == '__main__':
-    test3()
+    test2()
