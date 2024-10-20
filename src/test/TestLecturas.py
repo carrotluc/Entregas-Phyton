@@ -54,7 +54,29 @@ def test3():
     print(p_unicas(filepath, ' '))
 ################################################################################
 #EJEMPLO 9:
+from typing import Optional
+def longitud_promedio_lineas(filepath: str) -> Optional[float]:
+    total_palabras = 0  
+    total_lineas = 0
+    with open(filepath, 'r') as f:
+        for linea in f:
+            linea = linea.lower()
+            palabras = linea.split(',') 
+            n_palabras = len(palabras)  
+            total_palabras += n_palabras  
+            total_lineas += 1  
+    
+    if total_lineas == 0:
+        return None
+    
+    longitud_promedio = total_palabras / total_lineas
+    return longitud_promedio
+resultado = longitud_promedio_lineas(filepath)
 
+if resultado is not None:
+    print(f"La longitud promedio de palabras por línea es: {resultado:.2f}")
+else:
+    print("No se pudo calcular la longitud promedio.")
 ################################################################################
 if __name__ == '__main__':
     test2()

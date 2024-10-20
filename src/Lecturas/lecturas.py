@@ -42,7 +42,6 @@ def p_unicas(filepath, sep=' '):
 
 #ACTIVIDAD 9 - ENTREGA 1:
 from typing import Optional
-
 def longitud_promedio_lineas(filepath: str) -> Optional[float]:
     total_palabras = 0  
     total_lineas = 0
@@ -53,14 +52,12 @@ def longitud_promedio_lineas(filepath: str) -> Optional[float]:
             n_palabras = len(palabras)  
             total_palabras += n_palabras  
             total_lineas += 1  
-    # Evitar división por cero
+    
     if total_lineas == 0:
         return None
     
-    # Calcula la longitud promedio de palabras por línea
     longitud_promedio = total_palabras / total_lineas
     return longitud_promedio
-
 resultado = longitud_promedio_lineas(filepath)
 
 if resultado is not None:
