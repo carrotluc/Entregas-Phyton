@@ -2,6 +2,9 @@
 #Ruta al archivo. 
 proyecto = '../../' 
 filepath = proyecto + "resources/palabras_random.csv"
+filepath2 = proyecto + "resources/palabras_random.csv"
+filepath3 = proyecto + "resources/palabras_random.csv"
+filepath4 = proyecto + "resources/palabras_random.csv"
 
 def contador_palabras(filepath: str, sep: str, p:str, encoding='utf-8') ->int:
     p = p.lower()  
@@ -14,7 +17,7 @@ def contador_palabras(filepath: str, sep: str, p:str, encoding='utf-8') ->int:
     return n_palabra  
 
 #ACTIVIDAD 7 - ENTREGA 1:
-def cont_lineas(filepath: str, cad: str) ->int:
+def cont_lineas(filepath2: str, cad: str) ->int:
     ls: list[str] = []
     with open(filepath, 'r') as f:
         for linea in f:
@@ -24,7 +27,7 @@ def cont_lineas(filepath: str, cad: str) ->int:
     return ls
 
 #ACTIVIDAD 8 - ENTREGA 1:
-def p_unicas(filepath, sep=' '):
+def p_unicas(filepath3, sep=' '):
     n_palabras = {}  
     with open(filepath, 'r') as f:
         for linea in f:
@@ -42,7 +45,7 @@ def p_unicas(filepath, sep=' '):
 
 #ACTIVIDAD 9 - ENTREGA 1:
 from typing import Optional
-def longitud_promedio_lineas(filepath: str) -> Optional[float]:
+def longitud_promedio_lineas(filepath4: str) -> Optional[float]:
     total_palabras = 0  
     total_lineas = 0
     with open(filepath, 'r') as f:
