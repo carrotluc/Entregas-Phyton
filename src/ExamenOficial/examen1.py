@@ -43,7 +43,7 @@ def funcion_s2(n: int, k:int)->float:
     return t
 
 
-
+#pARA PROBAR CON OTRO FICHERO, CAMBIA ESTA DIRECCIÓN:
 proyecto = '../../' 
 fichero = proyecto + "resources/palabras_random.csv"
 def palabrasMasComunes(fichero:str, n:int=5)->list[tuple[str, int]]:
