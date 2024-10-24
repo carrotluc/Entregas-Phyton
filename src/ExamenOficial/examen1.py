@@ -31,6 +31,9 @@ def funcion_s2(n: int, k:int)->float:
     a: int = factorial(k)
     b: int = n*(factorial(k+2))
     s: int = 0
+    if b == 0:
+        raise ValueError("El denominador se anula. n no puede ser cero.")
+    
     for i in range(0,k+1):
         d: int = (-1)**i 
         num: int = (factorial(k)) / (factorial(i)*(factorial(k-i)))
@@ -39,7 +42,7 @@ def funcion_s2(n: int, k:int)->float:
     t: int = (a/b)*s
     return t
 
-#print(funcion_s2(10,7))
+
 
 proyecto = '../../' 
 fichero = proyecto + "resources/palabras_random.csv"
@@ -47,12 +50,12 @@ def palabrasMasComunes(fichero:str, n:int=5)->list[tuple[str, int]]:
     assert n>1, f'{n} debe ser mayor que 1'
     with open(fichero, 'r', encoding='utf-8') as file:
         texto = file.read().lower()
-    palabras = texto.split(',')
-    conteo_palabras = Counter(palabras)
-    palabras_comunes = conteo_palabras.most_common(n)
-    return palabras_comunes
+    p = texto.split(',')
+    n_palabras = Counter(p)
+    p_comunes = n_palabras.most_common(n)
+    return p_comunes
     
-#print(palabrasMasComunes(fichero, 5))
+    
     
 if __name__ == '__main__':
     try: 
@@ -78,5 +81,8 @@ if __name__ == '__main__':
     #Ten en cuenta que la ubicación del fichero es la siguiente:
     #proyecto = '../../' 
     #fichero = proyecto + "resources/palabras_random.csv"
+    
+    #No habría problemas al anularse el denominador ya que en las propias funciones nos 
+    #hemos asegurado de que sean positivos todos los términos. Por eso no lo pongo en try/except.
     
     
