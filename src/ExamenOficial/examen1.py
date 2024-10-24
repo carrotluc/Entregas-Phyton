@@ -60,12 +60,21 @@ if __name__ == '__main__':
         print(f'La solución a la primera actividad es {f1}, para n=4 y k=2')
     except AssertionError as e:
         print(f'Error en funcion_p2: {e}')
-    f2: int = funcion_c2(4, 2)
-    print(f'La solución a la segunda actividad es {f2}, para n=4 y k=2')
-    f3: int = funcion_s2(4, 2)
-    print(f'La solución a la tercera actividad es {f3}, para n=4 y k=2')
-    f4: str = palabrasMasComunes(fichero,5)
-    print(f'Las cinco palabras que más se repiten son {f4}')
+    try:
+        f2: int = funcion_c2(4, 2)
+        print(f'La solución a la segunda actividad es {f2}, para n=4 y k=2')
+    except AssertionError as e:
+        print(f'Error en C2: {e}')
+    try: 
+        f3: int = funcion_s2(4, 2)
+        print(f'La solución a la tercera actividad es {f3}, para n=4 y k=2')
+    except AssertionError as e:
+        print(f'Error en S2: {e}')
+    try: 
+        f4: str = palabrasMasComunes(fichero,5)
+        print(f'Las cinco palabras que más se repiten son {f4}')
+    except Exception as e:
+        print(f'Error en palabrasMasComunes: {e}')
     #Ten en cuenta que la ubicación del fichero es la siguiente:
     #proyecto = '../../' 
     #fichero = proyecto + "resources/palabras_random.csv"
