@@ -25,4 +25,4 @@ class Lista_ordenada_sin_repeticion(Agregado_lineal[E], Generic[E, R]):
             self._elements.insert(index, e)
 
     def __str__(self) -> str:
-        return f"ListaOrdenadaSinRepeticion({', '.join(map(str, self._elements))})"
+        return f"{', '.join(map(str, self._elements))}"

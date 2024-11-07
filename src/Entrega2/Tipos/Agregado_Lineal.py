@@ -5,6 +5,9 @@ from abc import ABC, abstractmethod
 E = TypeVar('E')
 
 class Agregado_lineal(ABC, Generic[E]):
+    def __init__(self):
+        self._elements: List[E] = []
+        
     def elements(self) -> List[E]:
         return self._elements[:]
     
@@ -13,9 +16,6 @@ class Agregado_lineal(ABC, Generic[E]):
     
     def is_empty(self) -> bool:
         return len(self._elements) == 0
-    
-    def __init__(self):
-        self._elements: List[E] = []
 
     @abstractmethod
     def add(self, e: E) -> None:
@@ -30,7 +30,6 @@ class Agregado_lineal(ABC, Generic[E]):
         return self._elements.pop(0)
 
     def remove_all(self) -> List[E]:
-        removed_elements = []
-        while not self.is_empty():
-            removed_elements.append(self.remove())
+        removed_elements = self._elements[:]
+        self._elements.clear()
         return removed_elements

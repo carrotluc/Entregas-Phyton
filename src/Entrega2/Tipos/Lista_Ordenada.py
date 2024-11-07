@@ -23,3 +23,6 @@ class Lista_ordenada(Agregado_lineal[E], Generic[E, R]):
     def add(self, e: E) -> None:
         index = self.__index_order(e)
         self._elements.insert(index, e)
+        
+    def __str__(self) -> str:
+        return f"[{', '.join(map(str, self._elements))}]"
