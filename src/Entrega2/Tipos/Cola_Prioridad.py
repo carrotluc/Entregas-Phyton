@@ -11,18 +11,6 @@ class Cola_de_prioridad(Generic[E, P]):
     @classmethod
     def of(cls) -> 'Cola_de_prioridad[E, P]':
         return cls()
-    
-    def elements(self) -> List[E]:
-        return self._elements
-    
-    def priorities(self) -> List[P]:
-        return self._priorities
-
-    def size(self) -> int:
-        return len(self._elements)
-
-    def is_empty(self) -> bool:
-        return len(self._elements) == 0
 
     def add(self, e: E, priority: P) -> None:
         index = self.__index_order(priority)
@@ -39,9 +27,9 @@ class Cola_de_prioridad(Generic[E, P]):
         return self._elements.pop(0)
 
     def remove_all(self) -> List[E]:
-        removed_elements = []
-        while not self.is_empty():
-            removed_elements.append(self.remove())
+        removed_elements = self._elements[:]
+        self._elements.clear()
+        self._priorities.clear()
         return removed_elements
 
     def __index_order(self, priority: P) -> int:
@@ -59,5 +47,14 @@ class Cola_de_prioridad(Generic[E, P]):
                     self.add(e, new_priority)
                 break
 
+    def size(self) -> int:
+        return len(self._elements)
+
+    def is_empty(self) -> bool:
+        return len(self._elements) == 0
+
+    def elements(self) -> List[E]:
+        return self._elements
+
     def __str__(self) -> str:
-        return f"ColaPrioridad({', '.join([f'({e}, {p})' for e, p in zip(self._elements, self._priorities)])})"
+        return f"[{', '.join([f'({e}, {p})' for e, p in zip(self._elements, self._priorities)])}]"
