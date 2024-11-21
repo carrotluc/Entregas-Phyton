@@ -118,7 +118,7 @@ def pruebas():
     except AssertionError:
         pass  
     except Exception as e:
-        print(f"Se esperaba un AssertionError, pero ocurrió otro error: {e}")
+        print(f"Se esperaba un AssertionError, pero ocurrió otro error. Detalles: {e}")
 
 if __name__ == "__main__":
     pruebas()
