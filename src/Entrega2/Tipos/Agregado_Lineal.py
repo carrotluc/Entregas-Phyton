@@ -1,11 +1,10 @@
-from __future__ import annotations
-from typing import List, TypeVar, Generic
+from typing import List, TypeVar, Generic, Optional
 from abc import ABC, abstractmethod
 
 E = TypeVar('E')
 
 class Agregado_lineal(ABC, Generic[E]):
-    def __init__(self):
+    def __init__(self) -> None:
         self._elements: List[E] = []
         
     def elements(self) -> List[E]:
@@ -30,6 +29,6 @@ class Agregado_lineal(ABC, Generic[E]):
         return self._elements.pop(0)
 
     def remove_all(self) -> List[E]:
-        removed_elements = self._elements[:]
+        removed_elements: List[E] = self._elements[:]
         self._elements.clear()
         return removed_elements

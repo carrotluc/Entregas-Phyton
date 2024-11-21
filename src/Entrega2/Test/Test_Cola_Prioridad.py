@@ -9,7 +9,7 @@ def test_cola_prioridad():
     
     assert cola.elements() == ['Paciente C', 'Paciente B', 'Paciente A'], "El orden de la cola es incorrecto."
     
-    atencion = []
+    atencion:list = []
     while not cola.is_empty():
         atencion.append(cola.remove())
     assert atencion == ['Paciente C', 'Paciente B', 'Paciente A'], "El orden de atención no es correcto."
