@@ -6,7 +6,16 @@ import networkx as nx
 V = TypeVar('V')  
 E = TypeVar('E')  
 
+
 class Grafo(Generic[V, E]):
+    def vertex_set(self) -> Set[V]:
+        """
+        Devuelve el conjunto de vértices del grafo.
+
+        :return: Conjunto de vértices.
+        """
+        return set(self.adyacencias.keys())
+
     """
     Representación de un grafo utilizando un diccionario de adyacencia.
     """

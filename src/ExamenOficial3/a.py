@@ -1,5 +1,5 @@
 from typing import List, Dict, Tuple, Optional, TypeVar, Generic, Set
-from grafo import Grafo
+from grafo2 import Grafo
 
 V = TypeVar('V')
 E = TypeVar('E')
