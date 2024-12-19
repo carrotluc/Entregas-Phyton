@@ -171,3 +171,7 @@ if __name__ == '__main__':
         lambda_vertice=str,
         lambda_arista=lambda peso: str(peso)  
     )
+
+
+
+
